@@ -4,7 +4,7 @@ app_url = 'git@github.com:eignhpants/basic-site.git'
 
 node('app-server'){
     stage "Checkout"
-    git credentialsId: git_creds, url: app_url
+    //git credentialsId: git_creds, url: app_url
 
     sh "make build"
     //sh 'pm2 start bin/www'
