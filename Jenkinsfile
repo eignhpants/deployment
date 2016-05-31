@@ -6,6 +6,6 @@ node('app-server'){
     stage "Checkout"
     git credentialsId: git_creds, url: app_url
 
-    sh 'make build'
+    sh "make build"
     //sh 'pm2 start bin/www'
 }
