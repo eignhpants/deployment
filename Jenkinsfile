@@ -11,7 +11,10 @@ node('app-server'){
     stage "Build"
     sh "make build"
 
-    stage "Start"
-    sh "pm2 start app.js"
+    stage "Start on 5533"
+
+    withEnv([PORT=5533]){
+        sh "pm2 start app.js --name pit-fighter"
+    }
     //sh 'pm2 start bin/www'
 }
