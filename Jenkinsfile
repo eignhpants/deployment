@@ -10,5 +10,8 @@ node('app-server'){
 
     stage "Build"
     sh "make build"
+
+    stage "Start"
+    sh "pm2 start app.js"
     //sh 'pm2 start bin/www'
 }
