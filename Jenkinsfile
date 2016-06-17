@@ -14,7 +14,7 @@ node('app-server'){
     stage "Start on 5533"
 
     withEnv([PORT=5533]){
-        sh "pm2 start app.js --name pit-fighter"
+        sh "pm2 start app.js"
     }
     //sh 'pm2 start bin/www'
 }
