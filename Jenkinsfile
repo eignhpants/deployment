@@ -14,7 +14,7 @@ node('app-server'){
     stage "Start on 5533"
 
 
-    sh "pm2 start app.js --name unicorn-party"
+    sh "pm2 start unicorn.js"
 
     //sh 'pm2 start bin/www'
 }
