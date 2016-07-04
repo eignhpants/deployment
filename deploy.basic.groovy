@@ -21,11 +21,6 @@ node(NODE_LABEL){
     sh "make build"
     sh 'ls -la'
 
-    withEnv([DEPLOY_PORT=3334]){
-        sh 'ls -la'
-        stage "Start on ${DEPLOY_PORT}"
-        sh "pm2 start basic.js"
-
-    }
+    sh 'pm2 start basic.js'
     //sh 'pm2 start bin/www'
 }
