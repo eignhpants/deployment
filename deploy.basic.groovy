@@ -21,6 +21,6 @@ node(NODE_LABEL){
     sh "make build"
     sh 'ls -la'
 
-    sh 'export NODE_LABEL=3334 && pm2 start -f www/bin'
+    sh 'export NODE_LABEL=3334 && pm2 start -f bin/www'
     //sh 'pm2 start bin/www'
 }
