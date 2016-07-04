@@ -13,8 +13,8 @@ node(NODE_LABEL){
 
     stage "Start on 5533"
 
-    withEnv([PORT=5533]){
-        sh "pm2 start app.js --name pit-fighter"
+    withEnv([DEPLOY_PORT=3334]){
+        sh "pm2 start basic.js"
     }
     //sh 'pm2 start bin/www'
 }
