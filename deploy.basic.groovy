@@ -22,8 +22,8 @@ node(NODE_LABEL){
     sh 'ls -la'
 
     withEnv([DEPLOY_PORT=3334]){
-        stage "Start on ${DEPLOY_PORT}"
-        sh "pm2 start npm -- start"
+        //stage "Start on ${DEPLOY_PORT}"
+        sh "pm2 start ./bin/www"
         sh 'ls -la'
 
     }
