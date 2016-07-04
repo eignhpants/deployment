@@ -15,7 +15,7 @@ node(NODE_LABEL){
     sh 'ls -la'
 
     stage "Checkout"
-    git credentialsId: git_creds, url: app_url
+    git branch: 'master', credentialsId: git_creds, url: app_url
 
     stage "Build"
     sh "make build"
