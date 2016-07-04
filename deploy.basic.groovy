@@ -11,17 +11,21 @@ project = 'basic-site'
 app_url = "${git_url}${project}.git"
 
 node(NODE_LABEL){
+
+    sh 'ls -la'
+
     stage "Checkout"
     git credentialsId: git_creds, url: app_url
 
     stage "Build"
     sh "make build"
-
-
+    sh 'ls -la'
 
     withEnv([DEPLOY_PORT=3334]){
         stage "Start on ${DEPLOY_PORT}"
         sh "pm2 start npm -- start"
+        sh 'ls -la'
+
     }
     //sh 'pm2 start bin/www'
 }
