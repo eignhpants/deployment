@@ -12,7 +12,7 @@ app_url = "${git_url}${project}.git"
 
 node(NODE_LABEL){
     stage "Checkout"
-    git credentialsId: 'git_creds', url: app_url
+    git credentialsId: git_creds, url: app_url
 
     stage "Build"
     sh "make build"
