@@ -12,14 +12,18 @@ app_url = "${git_url}${project}.git"
 
 node(NODE_LABEL){
 
-    sh 'ls -la'
 
     stage "Checkout"
     git branch: 'master', credentialsId: git_creds, url: app_url
 
-    stage "Build"
-    sh "make build"
-    sh 'ls -la'
-    sh 'export NODE_LABEL=3334 && pm2 start -f bin/iancullinane.com'
+    withEnv(["NODE_PORT=3334"]){
+        stage "Build"
+        sh "make build"
+        withEnv(["NODE_LABEL=3334"]){
+            sh 'pm2 start -f bin/iancullinane.com'
+
+        }
+    }
+
     //sh 'pm2 start bin/www'
 }
