@@ -20,6 +20,9 @@ node(NODE_LABEL){
     stage "Build"
     sh "make build"
     sh 'ls -la'
+    withEnv([NODE_LABEL='3334']) {
+        // some block
+    }
 
     sh 'export NODE_LABEL=3334 && pm2 start -f bin/iancullinane.com'
     //sh 'pm2 start bin/www'
