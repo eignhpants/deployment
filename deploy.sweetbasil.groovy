@@ -17,6 +17,7 @@ node(NODE_LABEL){
     sh "make build"
 
     stage "Deploy"
+    sh "ls -l"
     sh "pm2 start -f sweetbasil.js"
     //sh 'pm2 start bin/www'
 }
