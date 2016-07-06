@@ -11,13 +11,12 @@ node(NODE_LABEL){
 
 
     stage "Checkout"
-    git branch: 'master', credentialsId: git_creds, url: app_url
+    git branch: 'music', credentialsId: git_creds, url: app_url
 
     stage "Build"
     sh "make build"
 
     stage "Deploy"
-    sh "ls -l"
     sh "pm2 start -f sweetbasil.js"
     //sh 'pm2 start bin/www'
 }
