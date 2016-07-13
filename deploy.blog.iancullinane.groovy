@@ -17,7 +17,6 @@ node(NODE_LABEL){
     sh "docker run --rm \
         --name iancullinane.com \
         -p 2368:2368 -v /var/lib/ghost/iancullinane:/var/lib/ghost \
-        --restart=always \
         ghost"
 
     //sh 'pm2 start bin/www'
