@@ -14,7 +14,7 @@ node(NODE_LABEL){
 
 
     stage "Deploy Blog"
-    sh "docker stop iancullinane.com && docker rm iancullinane.com"
+    sh "docker stop iancullinane.com"
     sh "docker run -d \
         --name iancullinane.com \
         -p 2368:2368 -v /var/lib/ghost/iancullinane:/var/lib/ghost \
