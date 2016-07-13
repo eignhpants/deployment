@@ -14,12 +14,13 @@ node(NODE_LABEL){
 
 
     stage "Deploy Blog"
-    sh "docker stop iancullinane.com"
-    sh "docker run -d \
-        --name iancullinane.com \
-        -p 2368:2368 -v /var/lib/ghost/iancullinane:/var/lib/ghost \
-        --restart=always \
-        ghost"
+    sh "docker-compose -p -f deploy.blog.iancullinane.com.yml up -d"
+    //sh "docker stop iancullinane.com"
+    //sh "docker run -d \
+    //    --name iancullinane.com \
+    //    -p 2368:2368 -v /var/lib/ghost/iancullinane:/var/lib/ghost \
+    //    --restart=always \
+    //    ghost"
 
     //sh 'pm2 start bin/www'
 }
