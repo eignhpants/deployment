@@ -14,7 +14,7 @@ git_url = "${git_url}${project}.git"
 node(NODE_LABEL){
 
     stage "Checkout Deployment"
-    git branch: "master", credentialsId: gitcreds, url: git_url
+    git branch: "master", credentialsId: git_creds, url: git_url
 
     stage "Deploy Blog"
     sh "ls -la"
