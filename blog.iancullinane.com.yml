@@ -3,7 +3,7 @@ dashboard:
   ports:
     - "2368:2368"
   volumes:
-  - /var/lib/ghost/iancullinane:/var/lib/ghost
+    - /var/lib/ghost/iancullinane:/var/lib/ghost
   restart: always
   #extra_hosts:
 #  "jenkins.csi.dgs.io": "10.224.129.52"
