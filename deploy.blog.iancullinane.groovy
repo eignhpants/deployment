@@ -14,7 +14,7 @@ node(NODE_LABEL){
 
 
     stage "Deploy Blog"
-    sh "docker run -d \
+    sh "docker restart -d \
         --name iancullinane.com \
         -p 2368:2368 -v /var/lib/ghost/iancullinane:/var/lib/ghost \
         --restart=always \
