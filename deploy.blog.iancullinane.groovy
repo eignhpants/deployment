@@ -14,6 +14,7 @@ node(NODE_LABEL){
 
 
     stage "Deploy Blog"
+    sh "ls -la"
     sh "docker-compose -f blog.iancullinane.com.yml up -d"
     //sh "docker stop iancullinane.com"
     //sh "docker run -d \
