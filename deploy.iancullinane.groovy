@@ -10,7 +10,20 @@ git_url = 'git@github.com:eignhpants/'
 project = 'basic-site'
 app_url = "${git_url}${project}.git"
 
+
+
+node("docker"){
+
+    sh "ls -l"
+
+}
+
+
+
+
 node(NODE_LABEL){
+
+
 
 
     stage "Checkout"
