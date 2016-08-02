@@ -28,7 +28,7 @@ node(NODE_LABEL){
 node(NODE_LABEL){
 
     stage "Checkout Deployment"
-    git branch: "master", credentialsId: git_creds, url: project_url
+    git branch: "master", credentialsId: git_creds, url: deployment_url
 
     stage "Deploy Blog"
     sh "ls -la"
