@@ -12,7 +12,7 @@ app_url = "${git_url}${project}.git"
 
 
 
-node(NODE_LABEL){
+node("docker"){
 
     sh "ls -l"
 
