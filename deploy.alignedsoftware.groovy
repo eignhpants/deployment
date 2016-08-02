@@ -9,6 +9,7 @@ git_creds = 'e6a36c15-1342-4105-9ef8-896857a5781c'
 git_url = 'git@github.com:eignhpants/'
 project = 'aligned-software.com'
 app_url = "${git_url}${project}.git"
+deployment_url "${git_url}deployment.git"
 
 
 
@@ -17,7 +18,7 @@ node(NODE_LABEL){
 
     stage "Build"
     git branch: 'master', credentialsId: git_creds, url: app_url
-
+    sh "make build-docker"
 
 }
 
@@ -31,7 +32,7 @@ node(NODE_LABEL){
 
     stage "Deploy Blog"
     sh "ls -la"
-    sh "docker-compose -f alignedsoftware.com.yml up -d"
+    //sh "docker-compose -f alignedsoftware.com.yml up -d"
     //sh "docker stop iancullinane.com"
     //sh "docker run -d \
     //    --name iancullinane.com \
