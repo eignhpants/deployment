@@ -7,8 +7,21 @@
 
 git_creds = 'e6a36c15-1342-4105-9ef8-896857a5781c'
 git_url = 'git@github.com:eignhpants/'
-project = 'deployment'
-project_url = "${git_url}${project}.git"
+project = 'aligned-software.com'
+app_url = "${git_url}${project}.git"
+
+
+
+
+node(NODE_LABEL){
+
+    stage "Build"
+    git branch: 'master', credentialsId: git_creds, url: app_url
+
+
+}
+
+
 
 
 node(NODE_LABEL){

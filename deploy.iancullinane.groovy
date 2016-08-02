@@ -7,16 +7,8 @@
 
 git_creds = 'e6a36c15-1342-4105-9ef8-896857a5781c'
 git_url = 'git@github.com:eignhpants/'
-project = 'basic-site'
+project = 'basic-site.com'
 app_url = "${git_url}${project}.git"
-
-
-
-node("docker"){
-
-    sh "ls -l"
-
-}
 
 
 
