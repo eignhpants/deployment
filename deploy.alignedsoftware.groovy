@@ -20,5 +20,5 @@ node(NODE_LABEL){
 
     git branch: 'master', credentialsId: git_creds, url: app_url
 
-    sh "docker-compose up"
+    sh "docker-compose up -d"
 }
