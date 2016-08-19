@@ -16,29 +16,9 @@ deployment_url = "${git_url}deployment.git"
 
 node(NODE_LABEL){
 
-    stage "Build"
+    stage "deploy"
+
     git branch: 'master', credentialsId: git_creds, url: app_url
-    sh "make build-docker"
 
-}
-
-
-
-
-node(NODE_LABEL){
-
-    stage "Checkout Deployment"
-    git branch: "master", credentialsId: git_creds, url: deployment_url
-
-    stage "Deploy Blog"
-    sh "ls -la"
-    //sh "docker-compose -f alignedsoftware.com.yml up -d"
-    //sh "docker stop iancullinane.com"
-    //sh "docker run -d \
-    //    --name iancullinane.com \
-    //    -p 2368:2368 -v /var/lib/ghost/iancullinane:/var/lib/ghost \
-    //    --restart=always \
-    //    ghost"
-
-    //sh 'pm2 start bin/www'
+    sh "docker compose up"
 }
